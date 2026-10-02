@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking | RV Cabs and Tours</title>
+    <meta name="description"
+        content="RV Cabs and Tours provides comfortable, safe and reliable cab journeys, tour packages, airport pickups and customized travel services.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="container nav-wrapper">
+
+            <a href="index.html" class="logo">
+                <img class="logo-img" src="images/rv-logo.png" alt="RV Cabs and Tours">
+                <span class="logo-rv">RV</span>
+                <span class="logo-text">
+                    CABS AND TOURS
+                    <small>Happy Journey & Safety Travel</small>
+                </span>
+            </a>
+
+            <nav class="navbar" id="navbar">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="packages.html">Tour Packages</a>
+                <!-- <a href="gallery.html">Gallery</a> -->
+                <a href="contact.html">Contact</a>
+
+                <a href="booking.html" class="nav-btn">
+                    Book Now
+                </a>
+
+            </nav>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+        </div>
+
+    </header><!-- ================= BOOKING ================= -->
+
+    <section class="booking section" id="booking">
+
+        <div class="container booking-grid">
+
+            <div class="booking-content">
+
+                <span class="section-tag">
+                    BOOK YOUR TRIP
+                </span>
+
+                <h2>
+                    Plan Your Next Journey
+                </h2>
+
+                <p>
+                    Plan your next journey with RV Tours & Travels.
+                    Fill in your travel details below, and our team
+                    will get in touch with you to confirm your booking
+                    and assist you with the best travel options.
+                </p>
+
+
+                <div class="contact-info">
+
+                    <div class="contact-item">
+
+                        <span>📍</span>
+
+                        <div>
+                            <small>Headquarters</small>
+                            <strong>
+                                Trichy - 621216
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>📞</span>
+
+                        <div>
+                            <small>Phone Support</small>
+
+                            <strong>
+                                <a href="tel:+918148151523">
+                                    +91 81481 51523
+                                </a>
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>✉️</span>
+
+                        <div>
+                            <small>Email Us</small>
+
+                            <strong>
+                                <a href="mailto:rvcabsandtours@gmail.com">
+                                    rvcabsandtours@gmail.com
+                                </a>
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="booking-form-wrapper">
+
+                <form class="booking-form" id="bookingForm">
+
+                    <h3>Book Your Trip</h3>
+
+                    <div class="form-row">
+
+                        <!-- Full Name -->
+                        <div class="form-group">
+
+                            <label for="from_name">Full Name</label>
+
+                            <input type="text" id="from_name" name="from_name" placeholder="Manikandan" minlength="3"
+                                maxlength="50" pattern="[A-Za-z][A-Za-z\s]{2,49}"
+                                title="Please enter a valid name (letters and spaces only)" autocomplete="name"
+                                required>
+
+                            <small class="error-message" id="nameError"></small>
+
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div class="form-group">
+
+                            <label for="phone">Phone Number</label>
+
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" maxlength="10"
+                                pattern="[6-9][0-9]{9}" title="Enter a valid 10-digit Indian mobile number"
+                                inputmode="numeric" autocomplete="tel" required>
+
+                            <small class="error-message" id="phoneError"></small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input type="email" id="email" name="email" placeholder="manikandan@example.com" maxlength="100"
+                            autocomplete="email" required>
+
+                        <small class="error-message" id="emailError"></small>
+
+                    </div>
+
+
+                    <!-- Service -->
+                    <div class="form-group">
+
+                        <label for="service">Select Service</label>
+
+                        <select id="service" name="service" required>
+
+                            <option value="">
+                                Select Service
+                            </option>
+
+                            <option value="Cab & Transport">
+                                Cab & Transport
+                            </option>
+
+                            <option value="Airport Pickup">
+                                Airport Pickup
+                            </option>
+
+                            <option value="Tour Packages">
+                                Tour Packages
+                            </option>
+
+                            <option value="Corporate Cab Service">
+                                Corporate Cab Service
+                            </option>
+
+                            <option value="Hotel Booking">
+                                Hotel Booking
+                            </option>
+
+                        </select>
+
+                        <small class="error-message" id="serviceError"></small>
+
+                    </div>
+
+
+                    <!-- Requirements -->
+                    <div class="form-group">
+
+                        <label for="requirements">
+                            Your Requirements
+                        </label>
+
+                        <textarea id="requirements" name="requirements" rows="5" minlength="10" maxlength="500"
+                            placeholder="Tell us about your travel requirements..." required></textarea>
+
+                        <small class="error-message" id="requirementsError"></small>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary full-btn" id="bookNowBtn">
+                        Book Now
+                    </button>
+
+
+                    <!-- Booking Message -->
+                    <div id="bookingMessage" class="booking-message" role="status"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section><!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    RV CABS AND TOURS
+                </div>
+
+                <p>
+                    Your trusted partner for comfortable,
+                    safe, and reliable car journeys since 2026.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="packages.html">Category</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Customer Service
+                </h4>
+
+                <a href="contact.html">
+                    Privacy Policy
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="contact.html">
+                    Terms and Condition
+                </a>
+
+                <a href="services.html">
+                    Service
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Contact Us
+                </h4>
+
+                <a href="tel:+918148151523">
+                    📞 8148151523
+                </a>
+
+                <a href="mailto:rvcabsandtours@gmail.com">
+                    ✉️ rvcabsandtours@gmail.com
+                </a>
+
+                <p>
+                    📍 Trichy
+                    <br>
+                    621216
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 RV Cabs and Tours.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer><!-- ================= WHATSAPP ================= -->
+
+    <a href="https://wa.me/918148151523" class="whatsapp" target="_blank" aria-label="WhatsApp">
+
+        💬
+
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
