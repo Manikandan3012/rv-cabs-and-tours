@@ -604,103 +604,109 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                emailjs.sendForm(
+                emailjs.send(
                     "service_nblknqq",
                     "template_7c7inqs",
-                    bookingForm
+                    {
+                        from_name: document.getElementById("from_name").value.trim(),
+                        phone: document.getElementById("phone").value.trim(),
+                        email: document.getElementById("email").value.trim(),
+                        service: document.getElementById("service").value,
+                        requirements: document.getElementById("requirements").value.trim()
+                    }
                 )
 
 
-                .then(function () {
+                    .then(function () {
 
-                    console.log(
-                        "Booking email sent successfully."
-                    );
-
-
-                    if (bookingMessage) {
-
-                        bookingMessage.className =
-                            "booking-message success";
-
-                        bookingMessage.innerText =
-                            "Thank you! Your booking enquiry has been sent successfully.";
-
-                    }
-
-
-                    alert(
-                        "Thank you! Your booking enquiry has been sent successfully."
-                    );
-
-
-                    bookingForm.reset();
-
-
-                    /* Remove green validation */
-
-                    [
-                        nameInput,
-                        phoneInput,
-                        emailInput,
-                        serviceInput,
-                        requirementsInput
-                    ].forEach(function (input) {
-
-                        input.classList.remove(
-                            "success",
-                            "error"
+                        console.log(
+                            "Booking email sent successfully."
                         );
 
+
+                        if (bookingMessage) {
+
+                            bookingMessage.className =
+                                "booking-message success";
+
+                            bookingMessage.innerText =
+                                "Thank you! Your booking enquiry has been sent successfully.";
+
+                        }
+
+
+                        alert(
+                            "Thank you! Your booking enquiry has been sent successfully."
+                        );
+
+
+                        bookingForm.reset();
+
+
+                        /* Remove green validation */
+
+                        [
+                            nameInput,
+                            phoneInput,
+                            emailInput,
+                            serviceInput,
+                            requirementsInput
+                        ].forEach(function (input) {
+
+                            input.classList.remove(
+                                "success",
+                                "error"
+                            );
+
+                        });
+
+
+                        if (bookNowBtn) {
+
+                            bookNowBtn.disabled = false;
+
+                            bookNowBtn.innerText =
+                                "Book Now";
+
+                        }
+
+                    })
+
+
+                    .catch(function (error) {
+
+                        console.error(
+                            "EmailJS Error:",
+                            error
+                        );
+
+
+                        if (bookingMessage) {
+
+                            bookingMessage.className =
+                                "booking-message error";
+
+                            bookingMessage.innerText =
+                                "Sorry! Your booking enquiry could not be sent. Please try again.";
+
+                        }
+
+
+                        alert(
+                            "Sorry! Your booking enquiry could not be sent. Please try again."
+                        );
+
+
+                        if (bookNowBtn) {
+
+                            bookNowBtn.disabled = false;
+
+                            bookNowBtn.innerText =
+                                "Book Now";
+
+                        }
+
                     });
-
-
-                    if (bookNowBtn) {
-
-                        bookNowBtn.disabled = false;
-
-                        bookNowBtn.innerText =
-                            "Book Now";
-
-                    }
-
-                })
-
-
-                .catch(function (error) {
-
-                    console.error(
-                        "EmailJS Error:",
-                        error
-                    );
-
-
-                    if (bookingMessage) {
-
-                        bookingMessage.className =
-                            "booking-message error";
-
-                        bookingMessage.innerText =
-                            "Sorry! Your booking enquiry could not be sent. Please try again.";
-
-                    }
-
-
-                    alert(
-                        "Sorry! Your booking enquiry could not be sent. Please try again."
-                    );
-
-
-                    if (bookNowBtn) {
-
-                        bookNowBtn.disabled = false;
-
-                        bookNowBtn.innerText =
-                            "Book Now";
-
-                    }
-
-                });
 
             }
         );
